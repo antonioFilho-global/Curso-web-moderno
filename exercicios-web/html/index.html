@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+</head>
+<body>
+    <header>
+        Exercícios HTML
+    </header>
+    <!--CSS-->
+    <style>
+        #conteudo {
+            padding:30px 0px;
+            background-color: rgb(203, 203, 231);
+        }
+    </style>
+    <nav>
+        <a href  wm-nav ="exercicios/teste.html">00 - Teste</a> |
+        <a href wm-nav ="exercicios/texto1.html">01 - Texto 1</a>|
+        <a href wm-nav ="exercicios/texto2.html">02 - Texto 2</a>|
+        <a href wm-nav ="exercicios/listas.html">03 - Listas </a>|
+        <a href wm-nav ="exercicios/listaAninhada.html">04 - Listas Aninhadas Minha Versão </a>|
+        <a href wm-nav ="exercicios/listaAninhadaVerProf.html">05 - Listas Aninhadas Versão Professor</a>|
+        <a href wm-nav ="exercicios/links.html">06 - Links </a>|
+        <a href wm-nav ="exercicios/tabela.html">07 - Tabela </a>|
+        <a href wm-nav ="exercicios/form/form.html">08 - Formulário </a>|
+        <a href wm-nav ="exercicios/imagens.html">09 - Imagens </a>|
+        <a href wm-nav ="exercicios/carrosel/bootstrapCarrossel.html">10 - Bootstrap Carrossel </a>|
+        <a href wm-nav ="exercicios/desafioSlider.html">11 - Desafio Slider </a>|
+        <a href wm-nav ="exercicios/video.html">12 - Vídeo </a>|
+        <a href wm-nav ="exercicios/tagsNãoVisuais.html">13 - Tags Não visuais </a>|
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Curso Web Moderno
+    </footer>
+    
+    <!--JS-->
+    <!--Obs: para abrir usando o servidor local live, 
+        use o atalho (alt + l o)-->
+    <script>
+        //determinando que essa ação vai atuar sobre as tegs <a> 
+        //ou em um atributo específico, no caso por nome de wm-nav
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            
+            //Evendo onclick
+            link.onclick = function(e) {
+                e.preventDefault()
+                //Requisição Ajax
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>

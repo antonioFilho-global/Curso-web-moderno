@@ -1,0 +1,59 @@
+<!-- controlsList="nodownload" desabilita a propriedade de fazer download do video -->
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload"> 
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser não suporta a tag de vídeo.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    /* será aplicada a div dentro da class progresso */
+    .progresso > div {
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%; /* vai aumentar de acordo com o vídeo  */
+    }
+</style>
+
+<script>
+   function configurarVideo(id) {
+        const video = document.getElementById(id)
+        /* bloqueando o menu do botao direito do mouse */
+        video.oncontextmenu = () =>  false 
+
+        /* selecionando os elementos que tem wm-play */
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+   
+        setInterval(() => {
+            /* pega o percentual atual do video já reproduzido  */
+            const percentual = (video.currentTime / video.duration) * 100
+            /* pegando a div que será a barra de progresso, 
+            sendo a div dentro de wm-progresso="meuVideo"  */
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+           /*  a largura da div será o valor do percentual */
+            valorDiv.style.width = `${percentual}%`
+            //mostrar na tela a porcentagem 
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500);
+    }
+
+   configurarVideo('meuVideo')
+</script> 

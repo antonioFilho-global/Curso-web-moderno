@@ -1,0 +1,60 @@
+<table>
+   <!-- Para comentar em bloco Shift + Alt + A -->
+    <caption>Produtos</caption>
+     <!-- cabeçario  -->
+    <thead>
+        <th>Produto</th> 
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Total</th>
+    </thead>
+    <!-- corpo -->
+    <tbody>
+        <tr> <!-- Linha  -->
+            <td>iPod</td> <!-- coluna  -->
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Sansung s9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>2192,00</td>
+        </tr>
+    </tbody>
+    <tfoot> <!-- rodape -->
+        <tr>
+           <!-- A propriedade colspan="3", faz oculpar mais colunas na tabela -->
+           <!-- A propriedade rowspan="3", faz oculpar mais linhas na tabela -->
+            <td colspan="3" rowspan="2">Total</td>
+            <td>37637,00</td>
+        </tr>
+        <!-- <tr>
+            <td>Teste</td>
+        </tr> -->
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+
+    thead tr { /* será aplicado só para os tr dentro de thead */
+        border-bottom: solid 3px rgb(112, 116, 114);
+    }
+
+    tbody tr:hover {
+        background-color: burlywood;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>

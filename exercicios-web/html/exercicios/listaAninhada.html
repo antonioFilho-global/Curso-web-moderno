@@ -1,0 +1,81 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+            <ul>
+                <input type="button" value="Backend" onclick="mostra('backend')"/>
+                <div id="backend" class="hidden"> 
+                        <li>
+                            <!--app-->
+                            <input type="button" value="App" onclick="mostra('app')"/>
+                            <div id="app" class="hidden"> 
+                                <ul>
+                                    <li>produto.js</li>
+                                    <li>usuario.js</li>
+                                    <li>venda.js</li>
+                                </ul>
+                        </li>
+                    
+                   
+                        <li>
+                            <!--config-->
+                            <input type="button" value="Config" onclick="mostra('config')"/>
+                            <div id="config" class="hidden"> 
+                                <ul>
+                                    <li>banco.js</li>
+                                    <li>rotas.js</li>
+                                    <li>servidor.js</li>
+                                </ul>
+                            </div>
+                        </li>
+                </div>
+            </ul>
+    </li>
+    
+
+
+    <li>
+        <!--Frontend-->
+        <input type="button" value="Frontend" onclick="mostra('frontend')"/>
+        <div id="frontend" class="hidden"> 
+                <ul>
+                    <li>
+                        <!--Public-->
+                        <input type="button" value="Public" onclick="mostra('public')"/>
+                        <div id="public" class="hidden"> 
+                            <ul>
+                                <li>app.css</li>
+                                <li>app.js</li>
+                                <li>index.html</li>
+                            </ul>
+                    </li>
+                </ul>
+        </div>    
+    </li>
+</ul>
+
+<!--Usando CSS da cod3r-->
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<!--Meu CSS-->
+<style type="text/css">
+    .hidden {
+        display: none;
+    }
+    input {
+        display: block;
+        background-color: #a2d8eb;;
+    }
+</style>
+
+<!--JS-->
+<script>
+    function mostra(id) {
+        //Testa se o display tiver oculto, mostra
+        //se não, oculta
+        if (document.getElementById(id).style.display == 'block') {
+            document.getElementById(id).style.display = 'none';
+
+        } else {
+            document.getElementById(id).style.display = 'block';
+        }
+    }
+</script>

@@ -1,0 +1,75 @@
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+            alt="Muro da Cidade"
+            width="513" height="342"
+            title= "Muro da Cidade por Tarso Bessa"> 
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+            alt="Intro cod3r"
+            height="342"
+            title= "Gif animado"> 
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" 
+            alt="Rio de Janeiro"
+            height="342">
+    </p>
+    
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+            alt=Avatar" height="50" align="left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id varius orci, eu sagittis tortor.
+            Sed ultricies blandit dui. Pellentesque consequat, ex nec egestas posuere, erat tellus egestas lectus,
+            id bibendum mauris leo a diam. Morbi vitae fringilla enim. Vivamus feugiat porttitor dolor ut semper.
+    </p>
+    
+    <!-- pegando imagem atravez do css -->
+    <p class="cidade"> </p>
+    
+    <p>
+        <picture>
+            <!-- uma forma de mostra uma imagem ou outra, conforme critérios de tamanho -->
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+                media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+        </picture>
+    </p>
+</div>
+
+
+
+<style>
+   /* p {
+        position: absolute;
+        display: none;
+    }  */
+    
+    /* Class css */
+    .curcular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto {
+        width: 400px;
+        background-color: #444;
+    }
+
+    .texto img {
+        margin-right:10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg') ;
+        background-position: center;
+        /*  a imagem nao vai se repetir */
+        background-repeat: no-repeat; 
+        background-size: 200%;
+    }
+</style>

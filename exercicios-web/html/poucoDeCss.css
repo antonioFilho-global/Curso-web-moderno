@@ -1,0 +1,29 @@
+h1 {
+    /*display: none; Desativa todas as tags h1*/
+    font-size: 35px;
+    text-align: center;
+    background-color: rgba(80, 218, 172, 0.692);
+    position: relative;
+    top: auto;
+    margin-right: 5%;
+    margin-left: 5%;
+ }
+
+ /*Aplicando CSS usando class */
+ .fundoVermelho {
+     background-color: rgb(236, 124, 124);
+ }
+
+ .negrito {
+     font-weight: bold;
+ }
+
+ /*Aplicando CSS usando id */
+ #textoPrincipal {
+     font-size: 50px;
+     font-weight: bold;
+     color:burlywood;
+     padding: 10px;
+     background-color: #444;
+     margin-bottom: 30px;
+ }
