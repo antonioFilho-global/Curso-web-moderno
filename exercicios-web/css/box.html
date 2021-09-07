@@ -5,7 +5,24 @@
     <meta charset="UTF-8">
     <title>Box Model</title>
     <style>
-        /* ... */
+        body { 
+            font-size: 80px;
+        }
+        .c1 { background-color:  rgb(247, 209, 140);}
+        .c2 { background-color:  skyblue; }
+        .c3 { background-color:  rgb(253, 137, 116); }
+
+        div {
+            /*float altera a orientação das div que por padrão cada div oculpa uma linha, definindo se vão ficar todas na mesma linha (left, rigth)*/
+            float: left;
+            padding-top: 100px;
+            padding: 10px 50px 100px 150px;
+            /* Usando so dois valores, representa o valor da vertical e o segundo valor representa a horizontal*/
+            padding: 100px 50px;
+            padding: 50px;
+            margin: 0px 20px;
+            border: solid 5px rgb(88, 81, 81); 
+        }
     </style>
 </head>
 
