@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        /* Caso queira aplicar em toda
+        a página usa o seletor universal */
+        *{
+            box-sizing: border-box;
+        }
+
         body {
             font-size: 45px;
+            /* margin: 0; */
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 400px;
+            padding: 100px;
+            border: solid 20px rgba(61, 26, 26, 0.685);
+            /* box-sizing: border-box; */
         }
     </style>
 </head>
