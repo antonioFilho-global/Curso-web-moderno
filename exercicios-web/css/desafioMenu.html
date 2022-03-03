@@ -7,7 +7,115 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+        }
+
+        .cabecalho {
+            background-color: #333;
+            border-bottom: solid 5px rgba(7, 255, 144, 0.867);
+            height: 80px;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .menu-toggle {
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px;
+        }
+
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline-block; /* Colocando os links na horizontal  */
+        }
+
+        .cabecalho a {
+            text-decoration: none; /*  Desativando a aparencia de link */
+            color: #eee;
+            font-size: 1.3em;
+        }
+
+        .menu a {
+            padding: 15px;
+        }
+        /* Autenticação */
+        .autenticacao {
+            float: right;
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu a:hover,
+        .menu a.selected { /* A class selected vai ser usada no js */
+            background-color: #4faddb;
+            border-radius: 25px;
+            color: #000;
+        }
+
+        .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
+
+        .destaque {
+            background: #a83a4c;
+            color: #fff;
+        }
+
+       /*  Usando media query, para fazer a responsividade */
+       /*  Se a tela tiver 679px ou mais o menu toggle vai sumir (desktop) */
+       @media(min-width: 679px) {
+           .menu-toggle {
+               display: none;
+           }
+       }
+       
+       /*  Se a tela tiver até 680px ou mais o menu vai sumir (smartphone) */
+       @media(max-width: 680px) {
+           .menu {
+               display: none;
+           }
+       }
+
+       /* Se a largura máxima for 910px ou menor, vai esconder a autenticação */
+       @media(max-width: 910px) {
+           .autenticacao {
+               display: none;
+           }
+       }
     </style>
 </head>
 
@@ -44,7 +152,20 @@
     </header>
 
     <script>
-        // ...
+        /* Funcionalidade de seleção da página atual */
+        /* Sempre que o # da URL mudar vai ser executado essa função */
+        window.onhashchange = function(e) {
+            /* pegando a  URL anterior e com o split obtendo so o valor depois do #. exemplo: # 'contato'*/
+            const oldURL = e.oldURL.split('#')[1];
+            const newURL = e.newURL.split('#')[1];
+            console.log(oldURL, newURL);
+           /*  selecionado os links do menu que foram clicados tanto o atual e o anterior */
+           const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`);
+           const newLink = document.querySelector(`.menu a[href='#${newURL}']`);
+           /* Fazendo a troca de qual link de menu está secionado(select) */
+           oldLink && oldLink.classList.remove('selected'); /*  Removendo a seleção do anterior */
+           newLink && newLink.classList.add('selected');    /*  Adicionando a seleção do atual  */
+        }
     </script>
 </body>
 

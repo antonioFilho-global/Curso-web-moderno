@@ -6,7 +6,30 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex-container div {
+           /*Por padrão é no sentido na linha, mas segue a definição do flex-direction */
+            flex-basis: 100px;
+            width: 200px; /* Esse comando vai perder para o flex-basis */
+        }
+        
+        .flex-container div:nth-child(4) {
+            /* grow shrink basis */
+            flex: 3 6 100px;
+        }
     </style>
 </head>
 

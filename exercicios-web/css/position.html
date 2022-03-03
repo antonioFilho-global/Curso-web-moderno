@@ -5,7 +5,66 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+
+        .static {
+            top: 100px;  /*   Por ser static as propriedades top e left são ignoradas */
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 25px;   /*  Com fixed as propiedades position e right são aplicadas */
+            right: 6px;
+            background-color: tomato;
+        }
+
+        .relative1 {
+            /*  Os valores setados para posição vão levar em conta o elemento mais próximo, 
+            vai ser relativo ao elmento vizinho */
+            position: relative;  
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+        
+        .absolute1 {
+            position: absolute;
+            left: 350px;
+            top: 100px;
+            background-color: violet;
+        }
+
+       /*  Caso das Divs alinhadas com propriedades diferentes  */
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 200px;
+            width: 200px;
+            height: 190px;
+            background-color: slategrey;
+        }
+
+        .absolute2 {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            width: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            position: -webkit-sticky;  /* Safari */
+            position: sticky;
+            background-color: #777;
+            top: 10px;
+        }
     </style>
 </head>
 
