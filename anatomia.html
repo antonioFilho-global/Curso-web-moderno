@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .corpo {
+           /*  width: "100"; 
+            height: "100";  */
+        }
+        
+        .seletor {
+            color: rgb(90, 15, 15);
+            font-size: 50px;
+            text-align: center;
+            /* multiplos valores */
+            border: solid 3px rgb(1, 61, 31); /* shothand property */
+            /* É colocado mais  de uma opção de font,
+            se caso uma nao seja possível a outra é utilizada  */
+            font-family: helvetica, sans-serif;
+            /* funções */
+            width: calc (100% - 40px);
+            background-color: rgb(255, 255, 255);
+        }
+        /*  Usando uma pseudo-class  */
+        .seletor:hover {
+            background-color: rgb(182, 241, 205);
+        }
+       
+        /*  Usando uma pseudo-elemento  */
+        .seletor::first-letter {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+       /*  Padrão de nomeclatura  */
+       /*  dash-case ou camelCase */
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+    <div class="corpo">
+        <p> <img src="gif.gif" alt="gif" title= "gif" width="500px" height="500px"> </p>
+    </div>
+</body>
+
+</html>
