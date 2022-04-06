@@ -54,6 +54,27 @@
         /* ==================== */
         /* Solução com Flex Box */
         /* ==================== */
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu {
+            /* faz com que o menu creça em uma proporção maior */
+            flex-grow: 10;
+        }
+
+        .menu ul {
+            /* deixa todos os idens em linha */
+            display: flex; 
+           /*  Cria um espaçamento uniforme entre os idens  
+            justify-content: space-around; */
+        }
+
+        .menu li {
+            margin: 0px 10px;
+        }
     </style>
 </head>
 
